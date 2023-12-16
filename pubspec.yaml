@@ -1,0 +1,49 @@
+name: mealsup_mobile
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+  get: ^4.6.6
+  equatable: ^2.0.5
+  logger: ^2.0.2+1
+  email_validator: ^2.1.17
+  flutter_secure_storage: ^9.0.0
+  dartz: ^0.10.1
+  animations: ^2.0.10
+
+
+  # firebase
+  firebase_core: ^2.22.0
+  firebase_auth: ^4.13.0
+  cloud_firestore: ^4.13.0
+  firebase_crashlytics: ^3.4.4
+  google_sign_in: ^6.1.6
+  sign_in_with_apple: ^5.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/

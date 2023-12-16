@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "870140352349",
+    "project_id": "meal-up-52dbc",
+    "storage_bucket": "meal-up-52dbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870140352349:android:06f30b1f04243e90477ab4",
+        "android_client_info": {
+          "package_name": "app.mealsup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870140352349-oljsvrh6b5qk4glo0ihhr3589d924fif.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3GfTJOM0M8ylkQI1MF7z61R3s2QgOp1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870140352349-oljsvrh6b5qk4glo0ihhr3589d924fif.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "870140352349-6s7bclblc0bf9n0sg8cie9ghm2al53bo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "taskl.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
