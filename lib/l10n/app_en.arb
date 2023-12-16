@@ -57,7 +57,30 @@
     "search_for_recipes": "Search for recipes",
     "discover": "Discover",
     "favourite": "Favourite",
-    
+    "calories_count": "{count} kcal",
+    "@calories_count": {
+      "description": "calories count",
+      "placeholders": {
+        "count": {
+          "type": "int",
+          "format": "decimalPattern",
+          "example": "1"
+        }
+      }
+    },
+    "minutes_count": "{count} min",
+    "@minutes_count": {
+      "description": "minutes count",
+      "placeholders": {
+        "count": {
+          "type": "int",
+          "format": "decimalPattern",
+          "example": "1"
+        }
+      }
+    },
+
+
     "oops": "Oops!",
     "empty_name_error": "User name cannot be empty",
     "invalid_name_error": "User name must be at least 2 characters",

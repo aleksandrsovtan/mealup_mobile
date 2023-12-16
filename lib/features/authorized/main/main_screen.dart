@@ -40,22 +40,6 @@ class MainScreen extends GetView<MainScreenController> {
           ),
         ),
       );
-
-  // Widget _getBodyWidget(final int selectedIndex) {
-  //   switch (selectedIndex) {
-  //     case 0:
-  //       return Container(color: Colors.amber);
-  //     case 1:
-  //       return const SizedBox.shrink();
-  //     case 2:
-  //       return const SizedBox.shrink();
-  //     case 3:
-  //       return const SizedBox.shrink();
-
-  //     default:
-  //       return const SizedBox.shrink();
-  //   }
-  // }
 }
 
 class Constants {

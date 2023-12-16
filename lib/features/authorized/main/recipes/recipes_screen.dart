@@ -20,7 +20,7 @@ class RecipesScreen extends StatelessWidget {
             RecipesLargeCard(
               recipeImage:
                   'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/63O2DBTTTEI6VKN5T6FVSMYA2A.jpg&w=860',
-              recipeName: 'Vegetable salat with chicken and cheese',
+              recipeName: 'Vegetable salat with chicken and cheese (test)',
               caloriesCount: 150,
               preparationTime: 20,
             ),
