@@ -26,7 +26,6 @@ class MainScreenController extends GetxController {
   ];
 
   Route? onGenerateRoute(final RouteSettings settings) {
-    print(settings.name);
     switch (settings.name) {
       case Routes.recipes:
         return GetPageRoute(

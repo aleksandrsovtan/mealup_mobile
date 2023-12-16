@@ -104,9 +104,7 @@ class SignInScreen extends GetView<SignInScreenController> {
                     style: AppTextStyles.dmSans14
                         .copyWith(color: AppColors.primaryColor),
                   ),
-                  onTap: () {
-                    print('forgot tapped');
-                  },
+                  onTap: () {},
                 ),
                 const SizedBox(height: 92),
                 Row(
@@ -132,27 +130,21 @@ class SignInScreen extends GetView<SignInScreenController> {
                         Expanded(
                           child: CustomSocialButton(
                             socialImage: AppImages.iconGoogle2x,
-                            onTap: () {
-                              print('Google');
-                            },
+                            onTap: () {},
                           ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
                           child: CustomSocialButton(
                             socialImage: AppImages.iconApple2x,
-                            onTap: () {
-                              print('Apple');
-                            },
+                            onTap: () {},
                           ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
                           child: CustomSocialButton(
                             socialImage: AppImages.iconFacebook2x,
-                            onTap: () {
-                              print('Facebook');
-                            },
+                            onTap: () {},
                           ),
                         ),
                       ]),
