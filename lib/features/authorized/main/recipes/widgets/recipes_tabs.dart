@@ -29,7 +29,7 @@ class RecipesTabs extends GetView<RecipesScreenController> {
                               : AppColors.primaryColor,
                           fontWeight: controller.isFavorite.value
                               ? FontWeight.w400
-                              : FontWeight.w600,
+                              : FontWeight.w500,
                           fontSize: 17,
                         ),
                       ),
@@ -58,7 +58,7 @@ class RecipesTabs extends GetView<RecipesScreenController> {
                               ? AppColors.primaryColor
                               : AppColors.hintColor,
                           fontWeight: controller.isFavorite.value
-                              ? FontWeight.w600
+                              ? FontWeight.w500
                               : FontWeight.w400,
                           fontSize: 17,
                         ),

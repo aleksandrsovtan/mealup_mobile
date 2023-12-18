@@ -50,7 +50,7 @@ class CustomSearchField extends StatelessWidget {
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           hintText: hintText,
-          hintStyle: AppTextStyles.h2.copyWith(
+          hintStyle: AppTextStyles.dmSans16.copyWith(
             color: AppColors.hintColor,
           ),
           prefixIcon: Padding(
