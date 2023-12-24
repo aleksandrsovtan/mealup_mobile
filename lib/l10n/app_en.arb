@@ -121,6 +121,8 @@
         }
       }
     },
+    "ingredients": "Ingredients",
+    "preparations": "Preparations",
 
 
     "oops": "Oops!",

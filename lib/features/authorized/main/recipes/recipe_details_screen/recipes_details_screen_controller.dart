@@ -12,6 +12,7 @@ class RecipeDetailsScreenController extends GetxController {
   final RxDouble rating = RxDouble(0.0);
   final RxBool isExpanded = RxBool(false);
   final RxBool isExpandedButtonVisible = RxBool(false);
+  final RxBool isPreparationsTab = RxBool(false);
 
   @override
   void onInit() {
@@ -47,5 +48,9 @@ class RecipeDetailsScreenController extends GetxController {
   void onExpandedButtonTapped() {
     isExpandedButtonVisible.value = false;
     isExpanded.value = false;
+  }
+
+  void onPreparationsTabTapped(final bool value) {
+    isPreparationsTab.value = value;
   }
 }

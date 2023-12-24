@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/recipes_details_screen_controller.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_buttons_row.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_hiding_button.dart';
-import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_nutrition_value_item.dart';
+import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_nutrition_row.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_rating_and_time.dart';
+import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_tabs.dart';
 import 'package:mealsup_mobile/presentation/resources/colors.dart';
 import 'package:mealsup_mobile/presentation/resources/fonts.dart';
 
@@ -47,7 +47,6 @@ class RecipeDetailsScreen extends GetView<RecipeDetailsScreenController> {
                     ),
                     Expanded(
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
                         width: double.infinity,
                         decoration: const BoxDecoration(
                           color: AppColors.white,
@@ -63,6 +62,7 @@ class RecipeDetailsScreen extends GetView<RecipeDetailsScreenController> {
                             children: [
                               Padding(
                                 padding: EdgeInsets.symmetric(
+                                  horizontal: 16,
                                   vertical:
                                       controller.isExpandedButtonVisible.value
                                           ? 24
@@ -78,10 +78,15 @@ class RecipeDetailsScreen extends GetView<RecipeDetailsScreenController> {
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              const RecipeDetailsRatingAndTime(),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16),
+                                child: RecipeDetailsRatingAndTime(),
+                              ),
                               Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 24),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 24,
+                                  horizontal: 16,
+                                ),
                                 child: Text(
                                   controller.recipe.description,
                                   style: AppTextStyles.dmSans16.copyWith(
@@ -89,40 +94,12 @@ class RecipeDetailsScreen extends GetView<RecipeDetailsScreenController> {
                                   ),
                                 ),
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  RecipeDetailsNutritionValueItem(
-                                    color: AppColors.primaryColor,
-                                    name:
-                                        AppLocalizations.of(context)!.calories,
-                                    value: AppLocalizations.of(context)!
-                                        .calories_count(
-                                            controller.recipe.calories),
-                                  ),
-                                  RecipeDetailsNutritionValueItem(
-                                    color: AppColors.goldenYellow,
-                                    name: AppLocalizations.of(context)!.fat,
-                                    value: AppLocalizations.of(context)!
-                                        .grams(54.0),
-                                  ),
-                                  RecipeDetailsNutritionValueItem(
-                                    color: AppColors.lightGreen,
-                                    name: AppLocalizations.of(context)!.protein,
-                                    value: AppLocalizations.of(context)!
-                                        .grams(48.7),
-                                  ),
-                                  RecipeDetailsNutritionValueItem(
-                                    color: AppColors.powder,
-                                    name: AppLocalizations.of(context)!.garbs,
-                                    value: AppLocalizations.of(context)!
-                                        .grams(5.5),
-                                  ),
-                                ],
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16),
+                                child: RecipeDetailsNutritionRow(),
                               ),
-                              SizedBox(height: 20),
-                              Text('Description 4'),
+                              const RecipeDetailsTabs(),
+                              SizedBox(height: 250),
                               Text('Description 4'),
                               Text('Description 4'),
                               Text('Description 4'),
