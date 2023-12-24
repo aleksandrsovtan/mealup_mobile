@@ -3,9 +3,8 @@ import 'package:get/get.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/recipes_details_screen_controller.dart';
 import 'package:mealsup_mobile/presentation/resources/colors.dart';
 
-class RecipeDetailsHiddingButton
-    extends GetView<RecipeDetailsScreenController> {
-  const RecipeDetailsHiddingButton({super.key});
+class RecipeDetailsHidingButton extends GetView<RecipeDetailsScreenController> {
+  const RecipeDetailsHidingButton({super.key});
 
   @override
   Widget build(final BuildContext context) => GestureDetector(

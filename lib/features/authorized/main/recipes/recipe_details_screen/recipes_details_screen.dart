@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/recipes_details_screen_controller.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_buttons_row.dart';
-import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_hidding_button.dart';
+import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_hiding_button.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_nutrition_value_item.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_rating_and_time.dart';
 import 'package:mealsup_mobile/presentation/resources/colors.dart';
@@ -150,7 +150,7 @@ class RecipeDetailsScreen extends GetView<RecipeDetailsScreenController> {
               if (controller.isExpandedButtonVisible.value)
                 Positioned(
                   bottom: MediaQuery.of(context).size.height * 0.82,
-                  child: const RecipeDetailsHiddingButton(),
+                  child: const RecipeDetailsHidingButton(),
                 ),
             ],
           ),
