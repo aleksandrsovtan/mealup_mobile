@@ -1,4 +1,7 @@
 import 'package:equatable/equatable.dart';
+import 'package:mealsup_mobile/data/model/response/ingredient_model.dart';
+import 'package:mealsup_mobile/data/model/response/nutrition_model.dart';
+import 'package:mealsup_mobile/data/model/response/step_model.dart';
 
 class RecipeModel extends Equatable {
   const RecipeModel({
@@ -6,9 +9,10 @@ class RecipeModel extends Equatable {
     required this.image,
     required this.name,
     required this.description,
-    required this.calories,
+    required this.nutritions,
     required this.preparationTime,
-    required this.favorite,
+    required this.preparationSteps,
+    required this.ingredients,
   });
 
   factory RecipeModel.fromJson(final Map<String, dynamic> json) => RecipeModel(
@@ -16,27 +20,30 @@ class RecipeModel extends Equatable {
         image: json['image'],
         name: json['name'],
         description: json['description'],
-        calories: json['calories'],
+        nutritions: json['nutritions'],
         preparationTime: json['preparationTime'],
-        favorite: json['favorite'],
+        preparationSteps: json['preparationSteps'],
+        ingredients: json['ingredients'],
       );
 
   final String id;
   final String image;
   final String name;
   final String description;
-  final int calories;
+  final NutritionModel nutritions;
   final int preparationTime;
-  final bool favorite;
+  final List<StepModel> preparationSteps;
+  final List<IngredientModel> ingredients;
 
   Map<String, dynamic> toJson() => {
         'id': id,
         'image': image,
         'name': name,
         'description': description,
-        'calories': calories,
+        'nutritions': nutritions.toJson(),
         'preparationTime': preparationTime,
-        'favorite': favorite,
+        'preparationSteps': preparationSteps,
+        'ingredients': ingredients,
       };
 
   RecipeModel copyWith({
@@ -44,18 +51,20 @@ class RecipeModel extends Equatable {
     final String? image,
     final String? name,
     final String? description,
-    final int? calories,
+    final NutritionModel? nutritions,
     final int? preparationTime,
-    final bool? favorite,
+    final List<StepModel>? preparationSteps,
+    final List<IngredientModel>? ingredients,
   }) =>
       RecipeModel(
         id: id ?? this.id,
         image: image ?? this.image,
         name: name ?? this.name,
         description: description ?? this.description,
-        calories: calories ?? this.calories,
+        nutritions: nutritions ?? this.nutritions,
         preparationTime: preparationTime ?? this.preparationTime,
-        favorite: favorite ?? this.favorite,
+        preparationSteps: preparationSteps ?? this.preparationSteps,
+        ingredients: ingredients ?? this.ingredients,
       );
 
   @override
@@ -64,8 +73,9 @@ class RecipeModel extends Equatable {
         image,
         name,
         description,
-        calories,
+        nutritions,
         preparationTime,
-        favorite,
+        preparationSteps,
+        ingredients,
       ];
 }

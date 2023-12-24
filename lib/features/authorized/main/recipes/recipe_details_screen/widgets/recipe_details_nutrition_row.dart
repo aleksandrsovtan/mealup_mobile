@@ -16,22 +16,25 @@ class RecipeDetailsNutritionRow extends GetView<RecipeDetailsScreenController> {
             color: AppColors.primaryColor,
             name: AppLocalizations.of(context)!.calories,
             value: AppLocalizations.of(context)!
-                .calories_count(controller.recipe.calories),
+                .calories_count(controller.recipe.nutritions.calories),
           ),
           RecipeDetailsNutritionValueItem(
             color: AppColors.goldenYellow,
             name: AppLocalizations.of(context)!.fat,
-            value: AppLocalizations.of(context)!.grams(54.0),
+            value: AppLocalizations.of(context)!
+                .grams(controller.recipe.nutritions.fat),
           ),
           RecipeDetailsNutritionValueItem(
             color: AppColors.lightGreen,
             name: AppLocalizations.of(context)!.protein,
-            value: AppLocalizations.of(context)!.grams(48.7),
+            value: AppLocalizations.of(context)!
+                .grams(controller.recipe.nutritions.protein),
           ),
           RecipeDetailsNutritionValueItem(
             color: AppColors.powder,
             name: AppLocalizations.of(context)!.garbs,
-            value: AppLocalizations.of(context)!.grams(5.5),
+            value: AppLocalizations.of(context)!
+                .grams(controller.recipe.nutritions.garbs),
           ),
         ],
       );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:mealsup_mobile/data/model/response/nutrition_model.dart';
 import 'package:mealsup_mobile/data/model/response/recipe_model.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipes_screen_controller.dart';
 import 'package:mealsup_mobile/presentation/resources/colors.dart';
@@ -33,14 +34,21 @@ class RecipesLargeCard extends GetView<RecipesScreenController> {
               onTap: () =>
                   Get.toNamed(Routes.recipeFullDescription, arguments: {
                 'recipe': RecipeModel(
-                    id: 'id',
-                    image: recipeImage!,
-                    name: recipeName,
-                    description:
-                        'A classic Italian recipe, porchetta is a succulent piece of pork stuffed with fresh herbs, rolled and then roasted until gorgeously golden and crisp. Our mini porchetta uses a smaller cut of meat but is packed with the same big flavours – make it in just six simple steps with our easy recipe.',
+                  id: 'id',
+                  image: recipeImage!,
+                  name: recipeName,
+                  description:
+                      'A classic Italian recipe, porchetta is a succulent piece of pork stuffed with fresh herbs, rolled and then roasted until gorgeously golden and crisp. Our mini porchetta uses a smaller cut of meat but is packed with the same big flavours – make it in just six simple steps with our easy recipe.',
+                  nutritions: NutritionModel(
                     calories: caloriesCount,
-                    preparationTime: preparationTime,
-                    favorite: false)
+                    fat: 54,
+                    protein: 47.8,
+                    garbs: 5.7,
+                  ),
+                  preparationTime: preparationTime,
+                  preparationSteps: [],
+                  ingredients: [],
+                )
               }),
               child: Container(
                 height: 235,
