@@ -15,5 +15,8 @@ class AppColors {
   static const black = Color(0xFF251D1D);
   static const titleColor = Color(0xFF48455A);
   static const white = Color(0xFFFFFFFF);
+  static const goldenYellow = Color(0xFFF5C04D);
+  static const lightGreen = Color(0xFF9AC352);
+  static const powder = Color(0xFFE8ADA0);
   static const transparent = Colors.transparent;
 }

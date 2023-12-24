@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
 import 'package:mealsup_mobile/features/authorized/main/main_screen.dart';
 import 'package:mealsup_mobile/features/authorized/main/main_screen_bindings.dart';
-import 'package:mealsup_mobile/features/authorized/main/recipes/widgets/recipe_full_description.dart';
+import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/recipes_details_screen.dart';
+import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/recipes_details_screen_bindings.dart';
 import 'package:mealsup_mobile/features/unauthorized/sign_in/sign_in_screen.dart';
 import 'package:mealsup_mobile/features/unauthorized/sign_in/sign_in_screen_bindings.dart';
 import 'package:mealsup_mobile/features/unauthorized/sign_up/setup_step_page.dart';
@@ -51,7 +52,8 @@ class GetPages {
         ),
         GetPage(
           name: Routes.recipeFullDescription,
-          page: () => const RecipeFullDescription(),
+          binding: RecipeDetailsScreenBindings(),
+          page: () => const RecipeDetailsScreen(),
           transition: Transition.downToUp,
         ),
       ];

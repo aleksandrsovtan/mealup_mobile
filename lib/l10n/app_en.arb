@@ -1,7 +1,7 @@
 {
     "app_name": "Meals Up",
     "start_your_journey": "Start your journey",
-    "app_discription": "Transform your health journey with our health eating app that maxes tracking your meals",
+    "app_discription": "Transform your health journey with our healtheating app that maxes tracking your meals",
     "lets_start": "Let’s start",
     "already_mealsup_user": "Already MealsUp user?",
     "next": "Next",
@@ -76,6 +76,48 @@
           "type": "int",
           "format": "decimalPattern",
           "example": "1"
+        }
+      }
+    },
+    "hours_count": "{count} {count, plural, =1{hour} few{hours} other{hours}}",
+    "@hours_count": {
+      "description": "hours count",
+      "placeholders": {
+        "count": {
+          "type": "int",
+          "format": "decimalPattern",
+          "example": "1"
+        }
+      }
+    },
+    "hours_and_minutes_count": "{hours}h {minutes}m",
+    "@hours_and_minutes_count": {
+      "description": "hours and minutes count",
+      "placeholders": {
+        "hours": {
+          "type": "int",
+          "format": "decimalPattern",
+          "example": "1"
+        },
+        "minutes": {
+          "type": "int",
+          "format": "decimalPattern",
+          "example": "1"
+        }
+      }
+    },
+    "calories": "Calories",
+    "fat": "Fat",
+    "protein": "Protein",
+    "garbs": "Garbs",
+    "grams": "{count} g",
+    "@grams": {
+      "description": "grams count",
+      "placeholders": {
+        "count": {
+          "type": "double",
+          "format": "decimalPattern",
+          "example": "1.0"
         }
       }
     },

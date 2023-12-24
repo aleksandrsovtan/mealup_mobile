@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 class RecipeModel extends Equatable {
   const RecipeModel({
     required this.id,
+    required this.image,
     required this.name,
     required this.description,
     required this.calories,
@@ -12,6 +13,7 @@ class RecipeModel extends Equatable {
 
   factory RecipeModel.fromJson(final Map<String, dynamic> json) => RecipeModel(
         id: json['id'],
+        image: json['image'],
         name: json['name'],
         description: json['description'],
         calories: json['calories'],
@@ -20,6 +22,7 @@ class RecipeModel extends Equatable {
       );
 
   final String id;
+  final String image;
   final String name;
   final String description;
   final int calories;
@@ -28,6 +31,7 @@ class RecipeModel extends Equatable {
 
   Map<String, dynamic> toJson() => {
         'id': id,
+        'image': image,
         'name': name,
         'description': description,
         'calories': calories,
@@ -37,6 +41,7 @@ class RecipeModel extends Equatable {
 
   RecipeModel copyWith({
     final String? id,
+    final String? image,
     final String? name,
     final String? description,
     final int? calories,
@@ -45,6 +50,7 @@ class RecipeModel extends Equatable {
   }) =>
       RecipeModel(
         id: id ?? this.id,
+        image: image ?? this.image,
         name: name ?? this.name,
         description: description ?? this.description,
         calories: calories ?? this.calories,
@@ -55,6 +61,7 @@ class RecipeModel extends Equatable {
   @override
   List<Object?> get props => [
         id,
+        image,
         name,
         description,
         calories,

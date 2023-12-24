@@ -25,6 +25,7 @@ dependencies:
   animations: ^2.0.10
   flutter_svg: ^2.0.9
   cached_network_image: ^3.3.0
+  flutter_rating_bar: ^4.0.1
 
 
   # firebase

@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mealsup_mobile/presentation/resources/colors.dart';
-import 'package:mealsup_mobile/presentation/resources/icons.dart';
 
-class CustomLikeButton extends StatelessWidget {
-  const CustomLikeButton({
+class CustomRoundButton extends StatelessWidget {
+  const CustomRoundButton({
     super.key,
-    required this.isFavorite,
+    required this.iconSize,
+    required this.iconPath,
+    required this.padding,
+    required this.radius,
     required this.onTap,
   });
 
-  final bool isFavorite;
+  final String iconPath;
+  final double iconSize;
+  final EdgeInsetsGeometry padding;
+  final double radius;
   final VoidCallback onTap;
 
   @override
@@ -18,19 +23,19 @@ class CustomLikeButton extends StatelessWidget {
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors.black.withOpacity(0.99),
-            borderRadius: BorderRadius.circular(12),
+            color: AppColors.black.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(radius),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: padding,
             child: SvgPicture.asset(
-              isFavorite ? AppIcons.favoriteFill : AppIcons.favoriteBorder,
+              iconPath,
               colorFilter: const ColorFilter.mode(
                 AppColors.white,
                 BlendMode.srcIn,
               ),
-              height: 16,
-              width: 16,
+              height: iconSize,
+              width: iconSize,
             ),
           ),
         ),

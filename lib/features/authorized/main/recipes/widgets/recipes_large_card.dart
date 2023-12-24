@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:mealsup_mobile/data/model/response/recipe_model.dart';
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipes_screen_controller.dart';
 import 'package:mealsup_mobile/presentation/resources/colors.dart';
 import 'package:mealsup_mobile/presentation/resources/fonts.dart';
 import 'package:mealsup_mobile/presentation/resources/icons.dart';
-import 'package:mealsup_mobile/presentation/widgets/custom_like_button.dart';
+import 'package:mealsup_mobile/presentation/widgets/custom_round_button.dart';
 import 'package:mealsup_mobile/routes.dart';
 
 class RecipesLargeCard extends GetView<RecipesScreenController> {
@@ -29,7 +30,18 @@ class RecipesLargeCard extends GetView<RecipesScreenController> {
         () => Stack(
           children: [
             InkWell(
-              onTap: () => Get.toNamed(Routes.recipeFullDescription),
+              onTap: () =>
+                  Get.toNamed(Routes.recipeFullDescription, arguments: {
+                'recipe': RecipeModel(
+                    id: 'id',
+                    image: recipeImage!,
+                    name: recipeName,
+                    description:
+                        'A classic Italian recipe, porchetta is a succulent piece of pork stuffed with fresh herbs, rolled and then roasted until gorgeously golden and crisp. Our mini porchetta uses a smaller cut of meat but is packed with the same big flavours – make it in just six simple steps with our easy recipe.',
+                    calories: caloriesCount,
+                    preparationTime: preparationTime,
+                    favorite: false)
+              }),
               child: Container(
                 height: 235,
                 width: 225,
@@ -123,8 +135,13 @@ class RecipesLargeCard extends GetView<RecipesScreenController> {
             Positioned(
               right: 8,
               top: 8,
-              child: CustomLikeButton(
-                isFavorite: controller.isLiked.value,
+              child: CustomRoundButton(
+                iconSize: 16,
+                iconPath: controller.isLiked.value
+                    ? AppIcons.favoriteFill
+                    : AppIcons.favoriteBorder,
+                padding: const EdgeInsets.all(4),
+                radius: 12,
                 onTap: controller.onLikeTapped,
               ),
             ),

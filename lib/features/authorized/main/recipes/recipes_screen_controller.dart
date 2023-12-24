@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 
 class RecipesScreenController extends GetxController {
-  final RxBool isFavorite = RxBool(false);
+  final RxBool isFavoriteTab = RxBool(false);
   final RxBool isLiked = RxBool(false);
 
-  void onFavoriteTapped(final bool value) {
-    isFavorite.value = value;
+  void onFavoriteTabTapped(final bool value) {
+    isFavoriteTab.value = value;
   }
 
   void onLikeTapped() {
