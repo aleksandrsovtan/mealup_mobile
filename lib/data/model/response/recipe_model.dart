@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:mealsup_mobile/data/model/response/ingredient_model.dart';
 import 'package:mealsup_mobile/data/model/response/nutrition_model.dart';
@@ -15,15 +16,38 @@ class RecipeModel extends Equatable {
     required this.ingredients,
   });
 
+  factory RecipeModel.fromSnapshot(
+      final DocumentSnapshot<Map<String, dynamic>> document) {
+    final data = document.data()!;
+    return RecipeModel(
+      id: document.id,
+      image: data['image'],
+      name: data['name'],
+      description: data['description'],
+      nutritions: NutritionModel.fromJson(data['nutritions']),
+      preparationTime: data['preparationTime'],
+      preparationSteps: (data['preparationSteps'] as List)
+          .map((stepJson) => StepModel.fromJson(stepJson))
+          .toList(),
+      ingredients: (data['ingredients'] as List)
+          .map((ingredientJson) => IngredientModel.fromJson(ingredientJson))
+          .toList(),
+    );
+  }
+
   factory RecipeModel.fromJson(final Map<String, dynamic> json) => RecipeModel(
         id: json['id'],
         image: json['image'],
         name: json['name'],
         description: json['description'],
-        nutritions: json['nutritions'],
+        nutritions: NutritionModel.fromJson(json['nutritions']),
         preparationTime: json['preparationTime'],
-        preparationSteps: json['preparationSteps'],
-        ingredients: json['ingredients'],
+        preparationSteps: (json['preparationSteps'] as List)
+            .map((stepJson) => StepModel.fromJson(stepJson))
+            .toList(),
+        ingredients: (json['ingredients'] as List)
+            .map((ingredientJson) => IngredientModel.fromJson(ingredientJson))
+            .toList(),
       );
 
   final String id;
@@ -42,8 +66,9 @@ class RecipeModel extends Equatable {
         'description': description,
         'nutritions': nutritions.toJson(),
         'preparationTime': preparationTime,
-        'preparationSteps': preparationSteps,
-        'ingredients': ingredients,
+        'preparationSteps':
+            preparationSteps.map((final element) => element.toJson()),
+        'ingredients': ingredients.map((final e) => e.toJson()),
       };
 
   RecipeModel copyWith({

@@ -9,6 +9,7 @@ import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_s
 import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/widgets/recipe_details_tabs.dart';
 import 'package:mealsup_mobile/presentation/resources/colors.dart';
 import 'package:mealsup_mobile/presentation/resources/fonts.dart';
+import 'package:mealsup_mobile/presentation/widgets/custom_button.dart';
 
 class RecipeDetailsScreen extends GetView<RecipeDetailsScreenController> {
   const RecipeDetailsScreen({super.key});
@@ -100,6 +101,10 @@ class RecipeDetailsScreen extends GetView<RecipeDetailsScreenController> {
                               ),
                               const RecipeDetailsTabs(),
                               SizedBox(height: 250),
+                              CustomButton(
+                                onTap: controller.createRecipe,
+                                child: Text('Create'),
+                              ),
                               Text('Description 4'),
                               Text('Description 4'),
                               Text('Description 4'),
