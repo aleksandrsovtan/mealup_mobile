@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:mealsup_mobile/features/authorized/main/main_screen.dart';
 import 'package:mealsup_mobile/features/authorized/main/main_screen_bindings.dart';
+import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/recipes_details_screen.dart';
+import 'package:mealsup_mobile/features/authorized/main/recipes/recipe_details_screen/recipes_details_screen_bindings.dart';
 import 'package:mealsup_mobile/features/unauthorized/sign_in/sign_in_screen.dart';
 import 'package:mealsup_mobile/features/unauthorized/sign_in/sign_in_screen_bindings.dart';
 import 'package:mealsup_mobile/features/unauthorized/sign_up/setup_step_page.dart';
@@ -48,6 +50,12 @@ class GetPages {
           binding: MainScreenBindings(),
           transition: Transition.noTransition,
         ),
+        GetPage(
+          name: Routes.recipeFullDescription,
+          binding: RecipeDetailsScreenBindings(),
+          page: () => const RecipeDetailsScreen(),
+          transition: Transition.downToUp,
+        ),
       ];
 }
 
@@ -56,14 +64,15 @@ class Routes {
 
   // AUTHORIZATION
   static const welcome = '/welcome';
-  static const signIn = '/signIn';
-  static const signUp = '/signUp';
-  static const signUpSteps = '/signUpsteps';
+  static const signIn = '/sign-in';
+  static const signUp = '/sign-up';
+  static const signUpSteps = '/sign-upsteps';
 
   // HOME
   static const main = '/main';
   static const recipes = '/recipes';
-  static const mealPlans = '/meal_plans';
+  static const mealPlans = '/meal-plans';
   static const achievements = '/achievements';
   static const more = '/more';
+  static const recipeFullDescription = '/recipe-full-description';
 }

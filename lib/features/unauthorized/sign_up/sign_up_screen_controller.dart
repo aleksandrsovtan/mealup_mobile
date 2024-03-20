@@ -291,7 +291,9 @@ class SignUpScreenController extends GetxController {
   }
 
   void clearErrors() {
-    print('object');
+    emailError.value = '';
+    passwordError.value = '';
+    repeatPasswordError.value = '';
   }
 
   @override
